@@ -1,8 +1,8 @@
-# PitWall — F1 Race Predictor
+# PitWall F1 Race Predictor
 
 An XGBoost-powered F1 race prediction pipeline trained on 4 seasons of historical data (2022-2025, 1836 rows). Predicts race finishing positions using engineered features from qualifying data, driver form, and circuit history. Deployed on a Raspberry Pi 5 with a FastAPI backend.
 
-## Model Performance — 2026 Season (15 races)
+## Model Performance 2026 Season (15 races)
 
 | Metric | Value |
 |---|---|
