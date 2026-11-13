@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Predictor — PitWall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E8002D;--red-d:#B0001F;--gold:#F5A623;--silver:#A8B4C0;--bronze:#CD7F32;--green:#00C96F}
+[data-theme="dark"]{--bg:#090909;--bg2:#101012;--bg3:#161619;--bg4:#1E1E23;--bg5:#262630;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--text:#EFEFEF;--text2:#C0C0CC;--muted:#888898;--muted2:#55555F;--card:#161619;--nav:rgba(9,9,9,0.94);--inp:#1E1E23;--tog:#30303A}
+[data-theme="light"]{--bg:#F0F0F5;--bg2:#FFFFFF;--bg3:#E8E8F0;--bg4:#DCDCE8;--bg5:#D0D0E0;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.15);--text:#080810;--text2:#222230;--muted:#48485A;--muted2:#72728A;--card:#FFFFFF;--nav:rgba(240,240,245,0.94);--inp:#E8E8F0;--tog:#C0C0D0}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;transition:background .25s,color .25s}
+[data-theme="dark"] body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
+.wrap{max-width:1400px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--nav);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;letter-spacing:2px;color:var(--text);text-decoration:none;flex-shrink:0}
+.logo-pip{width:10px;height:10px;background:var(--red);border-radius:50%;}
+.nav-links{display:flex;gap:24px;margin-left:32px;flex:1}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.theme-btn{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:100px;padding:6px 16px;font-size:14px;font-weight:500;color:var(--text);font-family:'Barlow',sans-serif;cursor:pointer;transition:border-color .2s;white-space:nowrap}
+.theme-btn:hover{border-color:var(--red)}
+
+/* SANDBOX */
+.sandbox-section{padding:48px 0 64px}
+.sandbox-card{background:var(--bg2);border:1px solid var(--border2);border-radius:24px;overflow:hidden}
+.sandbox-hdr{background:var(--bg3);padding:28px 32px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.sandbox-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;color:var(--text)}
+.sandbox-sub{font-size:15px;color:var(--muted);margin-top:4px}
+.wet-wrap{display:flex;align-items:center;gap:10px;cursor:pointer}
+.wet-lbl{font-size:15px;color:var(--text2);font-weight:500}
+.tog{width:44px;height:24px;background:var(--tog);border:1px solid var(--border2);border-radius:12px;position:relative;transition:background .2s;cursor:pointer;flex-shrink:0}
+.tog.on{background:#3B82F6;border-color:#3B82F6}
+.tog-thumb{width:18px;height:18px;background:white;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.tog.on .tog-thumb{left:22px}
+.sandbox-body{padding:32px}
+.cfg-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:28px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field-lbl{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.field select,.field input{background:var(--inp);border:1px solid var(--border2);border-radius:12px;padding:12px 16px;color:var(--text);font-family:'Barlow',sans-serif;font-size:16px;outline:none;transition:border-color .2s;width:100%}
+.field select:focus,.field input:focus{border-color:var(--red)}
+.field select option{background:var(--bg3);color:var(--text)}
+
+/* Driver table */
+.drv-wrap{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:24px}
+.drv-head{display:grid;grid-template-columns:52px 1fr 110px 110px 130px 120px;background:var(--bg3);border-bottom:1px solid var(--border)}
+.drv-hcell{padding:10px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.drv-row{display:grid;grid-template-columns:52px 1fr 110px 110px 130px 120px;align-items:center;border-bottom:1px solid var(--border);transition:background .15s}
+.drv-row:last-child{border-bottom:none}
+.drv-row:hover{background:var(--bg3)}
+.drv-cell{padding:10px 14px}
+.drv-badge{width:36px;height:36px;background:var(--bg4);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;color:var(--text)}
+.drv-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:1px;color:var(--text)}
+.drv-team{font-size:13px;color:var(--muted);margin-top:1px}
+.drv-row input[type="number"],.drv-row select{background:var(--inp);border:1px solid var(--border);border-radius:8px;padding:8px 10px;color:var(--text);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;outline:none;width:100%;text-align:center;transition:border-color .2s}
+.drv-row select{text-align:left;font-size:14px}
+.drv-row input:focus,.drv-row select:focus{border-color:var(--red)}
+.drv-row select option{background:var(--bg3);color:var(--text)}
+
+.predict-btn{width:100%;background:var(--red);color:white;border:none;border-radius:14px;padding:18px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:3px;text-transform:uppercase;transition:background .2s,transform .1s;display:flex;align-items:center;justify-content:center;gap:12px}
+.predict-btn:hover{background:var(--red-d)}
+.predict-btn:active{transform:scale(.99)}
+.spin{display:none;width:22px;height:22px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:rot .7s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.predict-btn.loading .btn-txt{display:none}
+.predict-btn.loading .spin{display:inline-block}
+.err-box{background:rgba(232,0,45,.08);border:1px solid rgba(232,0,45,.3);border-radius:12px;padding:14px 18px;font-size:15px;color:#FF6B6B;margin-top:14px;display:none}
+
+/* Results */
+.results-panel{display:none;padding:32px;border-top:1px solid var(--border)}
+.results-panel.show{display:block}
+.results-hdr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.src-badge{font-size:13px;background:var(--bg4);border-radius:8px;padding:4px 12px;color:var(--muted);font-weight:400;letter-spacing:1px}
+.pred-row{display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:12px;margin-bottom:8px;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden}
+.pred-row::before{content:'';position:absolute;inset:0;width:var(--w,0%);background:rgba(232,0,45,.05);transition:width .9s ease}
+.pred-pos{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;width:36px;text-align:center;color:var(--muted2)}
+.pred-pos.p1{color:var(--gold)}.pred-pos.p2{color:var(--silver)}.pred-pos.p3{color:var(--bronze)}
+.pred-info{flex:1}
+.pred-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:1px;color:var(--text)}
+.pred-tm{font-size:14px;color:var(--muted)}
+.conf-wrap{display:flex;align-items:center;gap:10px}
+.conf-track{width:90px;height:5px;background:var(--bg5);border-radius:3px;overflow:hidden}
+.conf-fill{height:100%;background:var(--red);border-radius:3px;transition:width .9s ease}
+.conf-pct{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--muted);min-width:44px;text-align:right}
+
+/* RESPONSIVE (MOBILE SUPPORT) */
+@media(max-width:900px){
+  .wrap{padding:0 20px}
+  .nav-inner{padding:0 20px}
+  .drv-head{display:none}
+  .drv-row{grid-template-columns:40px 1fr 90px 100px}
+  .drv-row .col-gap,.drv-row .col-form{display:none}
+  .drv-hcell.col-gap,.drv-hcell.col-form{display:none}
+}
+@media(max-width:768px){
+  body{font-size:15px}
+  .wrap{padding:0 16px}
+  .nav-inner{padding:0 16px;height:54px}
+  .theme-btn span:last-child{display:none}
+  .theme-btn{padding:6px 10px}
+  
+  .sandbox-section{padding:28px 0 40px}
+  .sandbox-hdr{padding:20px}
+  .sandbox-title{font-size:22px}
+  .sandbox-body{padding:16px}
+  .cfg-row{grid-template-columns:1fr 1fr}
+  .cfg-row .field:first-child{grid-column:1/-1}
+  .drv-row{grid-template-columns:36px 1fr 80px}
+  .drv-row .col-tyre{display:none}
+  .drv-hcell.col-tyre{display:none}
+  .predict-btn{font-size:17px;padding:15px}
+  .results-panel{padding:16px}
+  .conf-track{width:60px}
+}
+@media(max-width:400px){
+  .cfg-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><div class="logo-pip"></div>PITWALL</a>
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="predict.html" class="active">Race Predictor</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()">
+        <span id="t-ico">☀️</span><span id="t-lbl">Light</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section class="sandbox-section">
+  <div class="wrap">
+    <div class="sandbox-card">
+      <div class="sandbox-hdr">
+        <div>
+          <div class="sandbox-title">Model Interface</div>
+          <div class="sandbox-sub">Configure track parameters and grid line-up</div>
+        </div>
+        <div class="wet-wrap" onclick="toggleWet()">
+          <span class="wet-lbl">Wet race</span>
+          <div class="tog" id="wet-tog"><div class="tog-thumb"></div></div>
+        </div>
+      </div>
+      <div class="sandbox-body">
+        <div class="cfg-row">
+          <div class="field">
+            <label class="field-lbl">Circuit</label>
+            <select id="circuit">
+              <option value="street">Miami GP — Street Circuit</option>
+              <option value="balanced">Australian GP — Balanced</option>
+              <option value="high_deg">Bahrain GP — High Degradation</option>
+              <option value="power">Italian GP — Power Circuit</option>
+              <option value="high_downforce">Monaco GP — High Downforce</option>
+              <option value="street">Singapore GP — Street Circuit</option>
+              <option value="high_deg">Qatar GP — High Degradation</option>
+              <option value="high_deg">Abu Dhabi GP — High Degradation</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-lbl">Year</label>
+            <input type="number" id="r-year" value="2026" min="2022" max="2030">
+          </div>
+          <div class="field">
+            <label class="field-lbl">Round</label>
+            <input type="number" id="r-round" value="4" min="1" max="24">
+          </div>
+        </div>
+        <div class="drv-wrap">
+          <div class="drv-head">
+            <div class="drv-hcell">Grid</div>
+            <div class="drv-hcell">Driver</div>
+            <div class="drv-hcell">Grid Pos</div>
+            <div class="drv-hcell col-gap">Gap to Pole</div>
+            <div class="drv-hcell col-tyre">Tyre</div>
+            <div class="drv-hcell col-form">Form (last 3)</div>
+          </div>
+          <div id="drv-rows"></div>
+        </div>
+        <button class="predict-btn" onclick="runPredict()">
+          <span class="btn-txt">GENERATE PREDICTION</span>
+          <div class="spin"></div>
+        </button>
+        <div class="err-box" id="err-box"></div>
+      </div>
+      <div class="results-panel" id="results-panel">
+        <div class="results-hdr">
+          Predicted Finishing Order
+          <span class="src-badge" id="src-badge">quali input</span>
+        </div>
+        <div id="pred-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const API = 'https://race.defaultrpi.xyz/api';
+let isWet = false;
+
+const TEAM_COLORS = {
+  'Mercedes':'#00D2BE','Ferrari':'#E8002D','McLaren':'#FF8000',
+  'Red Bull Racing':'#3671C6','Red Bull':'#3671C6','Aston Martin':'#358C75',
+  'Alpine':'#0093CC','Williams':'#64C4FF','AlphaTauri':'#5E8FAA',
+  'RB':'#5E8FAA','Haas F1 Team':'#B6BABD','Kick Sauber':'#52E252',
+};
+
+const DRIVERS = [
+  {abbr:'ANT',team:'Mercedes',        form:1.3, tf:1.5},
+  {abbr:'RUS',team:'Mercedes',        form:2.0, tf:1.5},
+  {abbr:'LEC',team:'Ferrari',         form:3.3, tf:3.5},
+  {abbr:'HAM',team:'Ferrari',         form:3.7, tf:3.5},
+  {abbr:'NOR',team:'McLaren',         form:5.0, tf:5.5},
+  {abbr:'PIA',team:'McLaren',         form:4.3, tf:5.5},
+  {abbr:'VER',team:'Red Bull Racing', form:7.0, tf:8.0},
+  {abbr:'TSU',team:'Red Bull Racing', form:9.0, tf:8.0},
+  {abbr:'ALO',team:'Aston Martin',    form:8.3, tf:9.0},
+  {abbr:'STR',team:'Aston Martin',    form:11.0,tf:9.0},
+  {abbr:'GAS',team:'Alpine',          form:10.0,tf:11.0},
+  {abbr:'DOO',team:'Alpine',          form:13.0,tf:11.0},
+  {abbr:'ALB',team:'Williams',        form:9.5, tf:10.5},
+  {abbr:'SAI',team:'Williams',        form:11.5,tf:10.5},
+  {abbr:'LAW',team:'RB',              form:12.0,tf:13.0},
+  {abbr:'HAD',team:'RB',              form:14.0,tf:13.0},
+  {abbr:'HUL',team:'Kick Sauber',     form:15.0,tf:16.0},
+  {abbr:'BOR',team:'Kick Sauber',     form:17.0,tf:16.0},
+  {abbr:'OCO',team:'Haas F1 Team',    form:14.0,tf:15.0},
+  {abbr:'BEA',team:'Haas F1 Team',    form:5.5, tf:15.0},
+];
+
+function toggleTheme(){
+  const d=document.documentElement;
+  const dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('t-ico').textContent=dark?'🌙':'☀️';
+  document.getElementById('t-lbl').textContent=dark?'Dark':'Light';
+}
+
+function toggleWet(){
+  isWet=!isWet;
+  document.getElementById('wet-tog').classList.toggle('on',isWet);
+}
+
+function buildDriverRows(){
+  const c=document.getElementById('drv-rows');
+  c.innerHTML=DRIVERS.map((d,i)=>{
+    const gap=(i*0.25).toFixed(3);
+    const tyre=i<4?'SOFT':i<10?'MEDIUM':'HARD';
+    const col=TEAM_COLORS[d.team]||'#888';
+    return `
+      <div class="drv-row" data-idx="${i}">
+        <div class="drv-cell">
+          <div class="drv-badge" id="badge-${i}">${i+1}</div>
+        </div>
+        <div class="drv-cell">
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:4px;height:36px;background:${col};border-radius:2px;opacity:.85;flex-shrink:0"></div>
+            <div>
+              <div class="drv-abbr">${d.abbr}</div>
+              <div class="drv-team">${d.team}</div>
+            </div>
+          </div>
+        </div>
+        <div class="drv-cell">
+          <input type="number" id="grid-${i}" value="${i+1}" min="1" max="20">
+        </div>
+        <div class="drv-cell col-gap">
+          <input type="number" id="gap-${i}" value="${gap}" step="0.001" min="0" max="10">
+        </div>
+        <div class="drv-cell col-tyre">
+          <select id="tyre-${i}">
+            <option value="SOFT"   ${tyre==='SOFT'?'selected':''}>🔴 Soft</option>
+            <option value="MEDIUM" ${tyre==='MEDIUM'?'selected':''}>🟡 Medium</option>
+            <option value="HARD"   ${tyre==='HARD'?'selected':''}>⚪ Hard</option>
+            <option value="INTER">🟢 Inter</option>
+            <option value="WET">🔵 Wet</option>
+          </select>
+        </div>
+        <div class="drv-cell col-form">
+          <input type="number" id="form-${i}" value="${d.form.toFixed(1)}" step="0.1" min="1" max="20">
+        </div>
+      </div>`;
+  }).join('');
+
+  DRIVERS.forEach((_,i)=>{
+    const input=document.getElementById(`grid-${i}`);
+    const badge=document.getElementById(`badge-${i}`);
+    if(input&&badge){
+      input.addEventListener('input',()=>{
+        badge.textContent=input.value||String(i+1);
+      });
+    }
+  });
+}
+
+async function runPredict(){
+  const btn=document.querySelector('.predict-btn');
+  const err=document.getElementById('err-box');
+  btn.classList.add('loading');
+  err.style.display='none';
+
+  // Duplicate Check
+  const gridPositions = new Set();
+  for (let i = 0; i < DRIVERS.length; i++) {
+    const pos = parseInt(document.getElementById(`grid-${i}`).value);
+    if (!isNaN(pos)) gridPositions.add(pos);
+  }
+  
+  if (gridPositions.size !== DRIVERS.length) {
+    err.textContent = "Validation Error: Every driver must have a unique grid position (1-20).";
+    err.style.display = 'block';
+    btn.classList.remove('loading');
+    return; 
+  }
+
+  const year =parseInt(document.getElementById('r-year').value)||2026;
+  const round=parseInt(document.getElementById('r-round').value)||4;
+  const sel  =document.getElementById('circuit');
+  const track=sel.value;
+  const name =sel.options[sel.selectedIndex].text.split('—')[0].trim();
+
+  const drivers=DRIVERS.map((d,i)=>{
+    const g = parseInt(document.getElementById(`grid-${i}`).value);
+    const gp = parseFloat(document.getElementById(`gap-${i}`).value);
+    const fm = parseFloat(document.getElementById(`form-${i}`).value);
+
+    return {
+      driver:            d.abbr,
+      team:              d.team,
+      grid_position:     isNaN(g) ? i+1 : g,
+      quali_gap_to_pole: isNaN(gp) ? 0 : gp,
+      driver_form_last3: isNaN(fm) ? d.form : fm,
+      team_form_last3:   d.tf,
+      dnf_last3:         0,
+      circuit_history:   d.form, 
+      starting_tyre:     document.getElementById(`tyre-${i}`).value,
+      sprint_position:   10,
+      is_wet:            isWet?1:0,
+      track_type:        track,
+    };
+  });
+
+  try{
+    const res=await fetch(`${API}/predict`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({race:name,year,round,drivers}),
+    });
+    if(!res.ok){
+      const detail=await res.json().catch(()=>({detail:`HTTP ${res.status}`}));
+      throw new Error(detail.detail||`HTTP ${res.status}`);
+    }
+    renderResults(await res.json());
+  }catch(e){
+    err.textContent=`API error: ${e.message}. Make sure FastAPI is running.`;
+    err.style.display='block';
+  }finally{
+    btn.classList.remove('loading');
+  }
+}
+
+function renderResults(data){
+  const panel=document.getElementById('results-panel');
+  const list =document.getElementById('pred-list');
+  document.getElementById('src-badge').textContent=data.source.replace(/_/g,' ');
+
+  list.innerHTML=data.results.map(r=>{
+    const pc  =r.position<=3?`p${r.position}`:'';
+    const conf=Math.round(r.confidence*100);
+    const col =TEAM_COLORS[r.team]||'#888';
+    return `
+      <div class="pred-row" style="--w:${conf}%">
+        <div class="pred-pos ${pc}">${r.position}</div>
+        <div style="width:5px;height:36px;background:${col};border-radius:3px;opacity:.85;flex-shrink:0"></div>
+        <div class="pred-info">
+          <div class="pred-abbr">${r.driver}</div>
+          <div class="pred-tm">${r.team}</div>
+        </div>
+        <div class="conf-wrap">
+          <div class="conf-track"><div class="conf-fill" style="width:${conf}%"></div></div>
+          <div class="conf-pct">${conf}%</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+buildDriverRows();
+</script>
+</body>
+</html>

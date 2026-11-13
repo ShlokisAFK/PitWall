@@ -1,0 +1,2048 @@
+[
+  {
+    "race": "Australian Grand Prix",
+    "year": 2026,
+    "round": 1,
+    "logged_at": "2026-05-07T05:09:57.169862+00:00",
+    "mae": 3.0,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "LEC",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Chinese Grand Prix",
+    "year": 2026,
+    "round": 2,
+    "logged_at": "2026-05-07T05:09:57.174183+00:00",
+    "mae": 0.909,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "HAM",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "HAM",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Japanese Grand Prix",
+    "year": 2026,
+    "round": 3,
+    "logged_at": "2026-05-07T05:09:57.178525+00:00",
+    "mae": 0.364,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "PIA",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "LEC",
+      "PIA",
+      "ANT"
+    ],
+    "actual_podium": [
+      "ANT",
+      "PIA",
+      "LEC"
+    ]
+  },
+  {
+    "race": "Miami Grand Prix",
+    "year": 2026,
+    "round": 4,
+    "logged_at": "2026-05-07T05:11:40.331235+00:00",
+    "mae": 0.727,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "NOR",
+      "PIA"
+    ],
+    "actual_podium": [
+      "ANT",
+      "NOR",
+      "PIA"
+    ]
+  },
+  {
+    "race": "Canadian Grand Prix",
+    "year": 2026,
+    "round": 5,
+    "logged_at": "2026-05-27T14:42:56.012537+00:00",
+    "mae": 6.0,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "NOR",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "HAM"
+    ]
+  },
+  {
+    "race": "Canadian Grand Prix",
+    "year": 2026,
+    "round": 5,
+    "logged_at": "2026-05-27T17:12:47.567914+00:00",
+    "mae": 3.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "HAM",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "HAM",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-14T18:26:48.095690+00:00",
+    "mae": 4.727,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "ANT",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "HAM",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "HAM",
+      "NOR",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-15T07:03:51.970388+00:00",
+    "mae": 3.909,
+    "winner_correct": true,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "VER",
+      "HAM",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "HAM",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-15T09:34:24.180213+00:00",
+    "mae": 2.182,
+    "winner_correct": true,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "ANT",
+      "HAM",
+      "VER"
+    ],
+    "actual_podium": [
+      "RUS",
+      "HAM",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-15T14:57:40.441208+00:00",
+    "mae": 0.727,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "NOR",
+      "HAM",
+      "RUS"
+    ],
+    "actual_podium": [
+      "NOR",
+      "HAM",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-16T08:44:41.880037+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "HAM"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "HAM"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-16T14:36:20.135395+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "HAM",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "HAM",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Barcelona Grand Prix",
+    "year": 2026,
+    "round": 7,
+    "logged_at": "2026-06-17T08:19:11.629412+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "HAM",
+    "actual_winner": "HAM",
+    "pred_podium": [
+      "HAM",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "HAM",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-29T05:53:48.291646+00:00",
+    "mae": 4.273,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "HAM",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "RUS",
+      "HAM",
+      "NOR"
+    ],
+    "actual_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-29T09:32:43.026994+00:00",
+    "mae": 2.273,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "HAM",
+      "VER",
+      "RUS"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-29T13:14:16.083090+00:00",
+    "mae": 1.636,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "HAM",
+      "RUS",
+      "VER"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-29T16:05:57.227549+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-30T07:59:31.581514+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-06-30T15:26:01.376092+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-07-01T07:55:26.888603+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-07-01T10:16:25.611513+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Austrian Grand Prix",
+    "year": 2026,
+    "round": 8,
+    "logged_at": "2026-07-01T13:23:34.458054+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-06T08:45:13.659448+00:00",
+    "mae": 4.364,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "ANT",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "RUS",
+      "LEC",
+      "HAM"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-06T14:40:41.446521+00:00",
+    "mae": 3.182,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "HAM",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "HAM",
+      "LEC",
+      "RUS"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-07T09:12:59.069639+00:00",
+    "mae": 2.455,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "LEC",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "LEC",
+      "HAM",
+      "RUS"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-07T14:29:12.087154+00:00",
+    "mae": 1.273,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "LEC",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "RUS",
+      "LEC",
+      "HAM"
+    ],
+    "actual_podium": [
+      "RUS",
+      "LEC",
+      "HAM"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-08T08:52:17.937599+00:00",
+    "mae": 1.273,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "LEC",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "RUS",
+      "HAM",
+      "LEC"
+    ],
+    "actual_podium": [
+      "RUS",
+      "HAM",
+      "LEC"
+    ]
+  },
+  {
+    "race": "British Grand Prix",
+    "year": 2026,
+    "round": 9,
+    "logged_at": "2026-07-08T14:56:22.214405+00:00",
+    "mae": 1.273,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "LEC",
+    "actual_winner": "LEC",
+    "pred_podium": [
+      "HAM",
+      "LEC",
+      "RUS"
+    ],
+    "actual_podium": [
+      "HAM",
+      "LEC",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Belgian Grand Prix",
+    "year": 2026,
+    "round": 10,
+    "logged_at": "2026-07-19T15:57:05.464797+00:00",
+    "mae": 4.636,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "LEC",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "LEC",
+      "HAM",
+      "RUS"
+    ],
+    "actual_podium": [
+      "LEC",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Belgian Grand Prix",
+    "year": 2026,
+    "round": 10,
+    "logged_at": "2026-07-20T15:29:21.095722+00:00",
+    "mae": 2.909,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "LEC",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "HAM",
+      "NOR",
+      "LEC"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "LEC"
+    ]
+  },
+  {
+    "race": "Belgian Grand Prix",
+    "year": 2026,
+    "round": 10,
+    "logged_at": "2026-07-21T08:10:18.513687+00:00",
+    "mae": 2.273,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "LEC",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "HAM",
+      "LEC",
+      "ANT"
+    ],
+    "actual_podium": [
+      "ANT",
+      "LEC",
+      "VER"
+    ]
+  },
+  {
+    "race": "Belgian Grand Prix",
+    "year": 2026,
+    "round": 10,
+    "logged_at": "2026-07-22T08:39:38.572788+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "LEC"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "LEC"
+    ]
+  },
+  {
+    "race": "Belgian Grand Prix",
+    "year": 2026,
+    "round": 10,
+    "logged_at": "2026-07-22T14:32:37.272027+00:00",
+    "mae": 1.0,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "LEC",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "LEC",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-27T09:08:10.990841+00:00",
+    "mae": 3.909,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "ANT",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "LEC"
+    ],
+    "actual_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-27T15:26:52.130585+00:00",
+    "mae": 3.182,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "ANT",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "LEC"
+    ],
+    "actual_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-28T15:37:14.751155+00:00",
+    "mae": 2.364,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "VER",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-29T06:52:25.526946+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-29T09:40:06.849064+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-29T14:07:21.662107+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-29T14:57:24.966959+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Hungarian Grand Prix",
+    "year": 2026,
+    "round": 11,
+    "logged_at": "2026-07-29T15:33:00.942337+00:00",
+    "mae": 0.818,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Monaco Grand Prix",
+    "year": 2026,
+    "round": 6,
+    "logged_at": "2026-08-23T19:00:45.708739+00:00",
+    "mae": 1.545,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "HAD",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "HAM",
+      "GAS",
+      "HAD"
+    ],
+    "actual_podium": [
+      "ANT",
+      "HAM",
+      "GAS"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-23T19:00:45.714139+00:00",
+    "mae": 0.636,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "HAM",
+      "RUS"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-23T19:06:00.009963+00:00",
+    "mae": 3.364,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-24T02:52:00.453278+00:00",
+    "mae": 2.455,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "HAM",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-24T04:30:20.074231+00:00",
+    "mae": 1.455,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "RUS",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-24T14:24:44.846313+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-24T15:25:29.488425+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T03:01:58.140104+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T06:58:25.749581+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T09:13:55.190624+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T10:06:24.661210+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T11:06:54.199617+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T12:28:57.449692+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "RUS",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T14:39:57.482164+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-25T15:22:10.250512+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T04:55:18.780792+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T08:13:11.540454+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T10:37:45.081546+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T13:36:10.786629+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T20:21:56.712007+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Dutch Grand Prix",
+    "year": 2026,
+    "round": 12,
+    "logged_at": "2026-08-26T20:58:16.506833+00:00",
+    "mae": 1.091,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "NOR",
+    "actual_winner": "NOR",
+    "pred_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-06T19:00:14.588534+00:00",
+    "mae": 0.455,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-07T07:44:40.330307+00:00",
+    "mae": 3.909,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "NOR",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "NOR",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-07T09:35:24.896216+00:00",
+    "mae": 3.364,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "NOR",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-07T10:45:07.634088+00:00",
+    "mae": 1.818,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-07T11:42:53.392006+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "VER"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-07T14:05:20.826034+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "RUS",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-08T06:40:45.485064+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "VER"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "VER"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-08T07:08:26.113438+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-08T08:15:02.722823+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-08T09:28:24.927061+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-08T12:37:18.659783+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T04:32:48.236357+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T05:41:44.760624+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T06:39:37.175538+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "RUS",
+      "VER"
+    ],
+    "actual_podium": [
+      "ANT",
+      "RUS",
+      "VER"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T10:02:11.332890+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T12:35:03.292936+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Italian Grand Prix",
+    "year": 2026,
+    "round": 13,
+    "logged_at": "2026-09-09T13:47:51.714631+00:00",
+    "mae": 1.091,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "RUS",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "RUS"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-13T19:00:18.948984+00:00",
+    "mae": 0.667,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-14T09:43:40.711302+00:00",
+    "mae": 3.545,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-14T10:40:12.136403+00:00",
+    "mae": 2.909,
+    "winner_correct": true,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "RUS",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-14T11:15:07.950892+00:00",
+    "mae": 1.636,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-14T13:30:57.211948+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-15T09:35:33.357397+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-15T09:55:21.565448+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "NOR",
+      "ANT"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-15T11:55:56.848409+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-16T02:34:58.661990+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-16T08:45:11.604261+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ],
+    "actual_podium": [
+      "VER",
+      "ANT",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-16T11:15:18.212702+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ],
+    "actual_podium": [
+      "ANT",
+      "VER",
+      "NOR"
+    ]
+  },
+  {
+    "race": "Spanish Grand Prix",
+    "year": 2026,
+    "round": 14,
+    "logged_at": "2026-09-16T13:23:53.865534+00:00",
+    "mae": 1.182,
+    "winner_correct": true,
+    "podium_hits": 3,
+    "podium_acc": 1.0,
+    "pred_winner": "ANT",
+    "actual_winner": "ANT",
+    "pred_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ],
+    "actual_podium": [
+      "NOR",
+      "ANT",
+      "VER"
+    ]
+  },
+  {
+    "race": "Azerbaijan Grand Prix",
+    "year": 2026,
+    "round": 15,
+    "logged_at": "2026-09-27T18:52:33.952402+00:00",
+    "mae": 5.182,
+    "winner_correct": false,
+    "podium_hits": 1,
+    "podium_acc": 0.333,
+    "pred_winner": "ANT",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "NOR",
+      "VER",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "HAD"
+    ]
+  },
+  {
+    "race": "Azerbaijan Grand Prix",
+    "year": 2026,
+    "round": 15,
+    "logged_at": "2026-09-27T19:06:44.603101+00:00",
+    "mae": 3.636,
+    "winner_correct": false,
+    "podium_hits": 2,
+    "podium_acc": 0.667,
+    "pred_winner": "VER",
+    "actual_winner": "RUS",
+    "pred_podium": [
+      "VER",
+      "RUS",
+      "ANT"
+    ],
+    "actual_podium": [
+      "VER",
+      "RUS",
+      "HAD"
+    ]
+  }
+]

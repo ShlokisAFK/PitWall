@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PitWall — F1 Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E8002D;--red-d:#B0001F;--gold:#F5A623;--silver:#A8B4C0;--bronze:#CD7F32;--green:#00C96F}
+[data-theme="dark"]{--bg:#090909;--bg2:#101012;--bg3:#161619;--bg4:#1E1E23;--bg5:#262630;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--text:#EFEFEF;--text2:#C0C0CC;--muted:#888898;--muted2:#55555F;--card:#161619;--nav:rgba(9,9,9,0.94);--inp:#1E1E23;--tog:#30303A}
+[data-theme="light"]{--bg:#F0F0F5;--bg2:#FFFFFF;--bg3:#E8E8F0;--bg4:#DCDCE8;--bg5:#D0D0E0;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.15);--text:#080810;--text2:#222230;--muted:#48485A;--muted2:#72728A;--card:#FFFFFF;--nav:rgba(240,240,245,0.94);--inp:#E8E8F0;--tog:#C0C0D0}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;transition:background .25s,color .25s}
+[data-theme="dark"] body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
+.wrap{max-width:1400px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--nav);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;letter-spacing:2px;color:var(--text);text-decoration:none;flex-shrink:0}
+.logo-pip{width:10px;height:10px;background:var(--red);border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.nav-links{display:flex;gap:24px;margin-left:32px;flex:1}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.api-status{font-family:'Barlow Condensed', sans-serif; font-weight:600; font-size:14px; letter-spacing:1px; text-transform:uppercase; padding:0 10px;}
+.theme-btn{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:100px;padding:6px 16px;font-size:14px;font-weight:500;color:var(--text);font-family:'Barlow',sans-serif;cursor:pointer;transition:border-color .2s;white-space:nowrap}
+.theme-btn:hover{border-color:var(--red)}
+
+/* HERO */
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:start}
+.race-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.round-tag{font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--red)}
+.flag-tag{font-size:24px}
+.race-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:.95;letter-spacing:-2px;color:var(--text);margin-bottom:16px}
+.race-detail{font-size:17px;color:var(--muted);display:flex;align-items:center;gap:12px;margin-bottom:36px;flex-wrap:wrap}
+.countdown{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.cd-unit{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:16px 20px;text-align:center;min-width:82px}
+.cd-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:42px;line-height:1;color:var(--text);display:block}
+.cd-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:4px;display:block}
+.cd-sep{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:800;color:var(--red);margin-bottom:20px}
+.race-ist{font-size:15px;color:var(--muted)}
+.sched-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:sticky;top:80px}
+.sched-head{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.sched-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--border);gap:12px}
+.sched-row:last-child{border-bottom:none;padding-bottom:0}
+.sched-name{font-size:16px;font-weight:500;color:var(--text)}
+.sched-time{font-size:14px;color:var(--muted);text-align:right}
+.sched-time.race{color:var(--red);font-weight:600;font-size:15px}
+
+/* ACCURACY */
+.acc-section{padding:48px 0;border-bottom:1px solid var(--border)}
+.sec-eye{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:24px;font-weight:600}
+.acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.acc-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+.acc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);opacity:.8}
+.acc-lbl{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;font-weight:500}
+.acc-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;line-height:1;color:var(--text)}
+.acc-num.gold{color:var(--gold)}.acc-num.green{color:var(--green)}
+.acc-unit{font-size:22px;font-weight:400;color:var(--muted)}
+.acc-sub{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* LAST RACE */
+.lr-section{padding:48px 0;border-bottom:1px solid var(--border)}
+.sec-hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;flex-wrap:wrap;gap:8px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;color:var(--text);letter-spacing:.5px}
+.sec-sub{font-size:15px;color:var(--muted);margin-top:2px}
+.perfect-tag{font-size:14px;color:var(--green);font-weight:600}
+.podium-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.podium-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px 24px;text-align:center;position:relative;overflow:hidden}
+.podium-card.p1{border-color:rgba(245,166,35,.4)}.podium-card.p2{border-color:rgba(168,180,192,.3)}.podium-card.p3{border-color:rgba(205,127,50,.3)}
+.podium-bg{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:80px;line-height:1;position:absolute;top:8px;right:16px;opacity:.07}
+.p1 .podium-bg{color:var(--gold);opacity:.15}.p2 .podium-bg{color:var(--silver)}.p3 .podium-bg{color:var(--bronze)}
+.p-medal{font-size:32px;margin-bottom:10px}
+.p-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;letter-spacing:2px;color:var(--text)}
+.p-team{font-size:14px;color:var(--muted);margin-top:4px}
+.p-time{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:var(--muted2);margin-top:10px}
+.rtable{width:100%;border-collapse:collapse}
+.rtable th{text-align:left;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--border2)}
+.rtable td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:16px;color:var(--text2);transition:background .15s}
+.rtable tr:last-child td{border-bottom:none}
+.rtable tbody tr:hover td{background:var(--bg3)}
+.td-pos{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--muted)}
+.td-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:1px;color:var(--text)}
+.tbar{display:inline-block;width:6px;height:18px;border-radius:3px;margin-right:8px;vertical-align:middle}
+.pts-b{background:var(--bg4);border-radius:8px;padding:3px 10px;font-size:14px;font-weight:600;color:var(--text2);font-family:'Barlow Condensed',sans-serif}
+
+/* Skeleton loader */
+.skel{background:linear-gradient(90deg,var(--bg3) 25%,var(--bg4) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shim 1.4s infinite;border-radius:8px}
+@keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .wrap{padding:0 20px}
+  .nav-inner{padding:0 20px}
+  .acc-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .acc-num{font-size:36px}
+  .acc-unit{font-size:18px}
+}
+@media(max-width:768px){
+  body{font-size:15px}
+  .wrap{padding:0 16px}
+  .nav-inner{padding:0 16px;height:54px}
+  .api-status{display:none;}
+  .theme-btn span:last-child{display:none}
+  .theme-btn{padding:6px 10px}
+  .hero{padding:32px 0 28px}
+  .hero-grid{display:block}
+  .race-name{font-size:52px;letter-spacing:-1px;margin-bottom:12px}
+  .race-detail{font-size:15px;margin-bottom:24px}
+  .countdown{gap:6px;margin-bottom:10px}
+  .cd-unit{min-width:60px;padding:12px 10px;border-radius:10px}
+  .cd-num{font-size:28px}
+  .cd-lbl{font-size:10px}
+  .cd-sep{font-size:24px}
+  .sched-card{position:static;border-radius:16px;padding:20px;margin-top:24px}
+  .acc-section, .lr-section{padding:28px 0}
+  .sec-title{font-size:24px}
+  .podium-grid{grid-template-columns:1fr}
+  .podium-card{padding:18px;display:flex;align-items:center;gap:16px;text-align:left}
+  .podium-bg{display:none}
+  .p-medal{font-size:28px;margin-bottom:0;flex-shrink:0}
+  .p-abbr{font-size:26px}
+  .rtable th:nth-child(4),.rtable td:nth-child(4){display:none}
+  .rtable th{font-size:11px;padding:8px 10px}
+  .rtable td{padding:10px;font-size:14px}
+}
+@media(max-width:400px){
+  .acc-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><div class="logo-pip"></div>PITWALL</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Dashboard</a>
+      <a href="predict.html">Race Predictor</a>
+    </div>
+    <div class="nav-right">
+      <div class="api-status" id="api-status"><span style="color:var(--muted)">●</span> Checking API...</div>
+      <button class="theme-btn" onclick="toggleTheme()">
+        <span id="t-ico">☀️</span><span id="t-lbl">Light</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="race-eyebrow">
+          <span class="round-tag" id="round-tag">Awaiting Server...</span>
+          <span class="flag-tag" id="race-flag"></span>
+        </div>
+        <div class="race-name" id="race-name" style="white-space:pre-line">Data Offline</div>
+        <div class="race-detail">
+          <span id="race-loc">—</span><span style="color:var(--muted2)">·</span><span id="race-rnd">—</span>
+        </div>
+        <div class="countdown">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Days</span></div><div class="cd-sep">:</div>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Hours</span></div><div class="cd-sep">:</div>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Mins</span></div><div class="cd-sep">:</div>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Secs</span></div>
+        </div>
+        <div class="race-ist" id="race-ist">Start your FastAPI server to sync calendar.</div>
+      </div>
+      <div class="sched-card">
+        <div class="sched-head">Weekend Schedule — IST</div>
+        <div id="sched-list">
+          <div style="color:var(--muted); font-size:14px; text-align:center; padding: 20px 0;">No data available.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="acc-section">
+  <div class="wrap">
+    <div class="sec-eye" id="acc-eye">Model Performance</div>
+    <div class="acc-grid">
+      <div class="acc-card">
+        <div class="acc-lbl">Winner Accuracy</div>
+        <div class="acc-num gold" id="acc-win">—<span class="acc-unit">%</span></div>
+        <div class="acc-sub" id="acc-win-sub">—</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-lbl">Podium Accuracy</div>
+        <div class="acc-num green" id="acc-pod">—<span class="acc-unit">%</span></div>
+        <div class="acc-sub" id="acc-pod-sub">—</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-lbl">Avg Position Error</div>
+        <div class="acc-num" id="acc-mae">—<span class="acc-unit"> pos</span></div>
+        <div class="acc-sub">Mean absolute error</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-lbl">Training Data</div>
+        <div class="acc-num" style="font-size:38px">4 <span class="acc-unit">seasons</span></div>
+        <div class="acc-sub">2022–2025 · 1836 rows</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lr-section">
+  <div class="wrap">
+    <div class="sec-hdr">
+      <div>
+        <div class="sec-title" id="lr-title">Last Race</div>
+        <div class="sec-sub" id="lr-sub">Connect to API to view results.</div>
+      </div>
+    </div>
+    <div class="podium-grid" id="podium-grid">
+        <div class="podium-card p1"><div class="skel" style="height:100px"></div></div>
+        <div class="podium-card p2"><div class="skel" style="height:100px"></div></div>
+        <div class="podium-card p3"><div class="skel" style="height:100px"></div></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="rtable">
+        <thead><tr><th>Pos</th><th>Driver</th><th>Team</th><th>Gap</th><th>Pts</th></tr></thead>
+        <tbody id="lr-tbody"><tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted)">Connect to server to sync results</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+const API = 'https://race.defaultrpi.xyz/api';
+let cdTimer = null;
+let raceUtc = null;
+
+// I had accidentally deleted this object from index.html! 
+// Without it, the Last Race table was crashing trying to find team colors.
+const TEAM_COLORS = {
+  'Mercedes':'#00D2BE','Ferrari':'#E8002D','McLaren':'#FF8000',
+  'Red Bull Racing':'#3671C6','Red Bull':'#3671C6','Aston Martin':'#358C75',
+  'Alpine':'#0093CC','Williams':'#64C4FF','AlphaTauri':'#5E8FAA',
+  'RB':'#5E8FAA','Haas F1 Team':'#B6BABD','Kick Sauber':'#52E252',
+};
+
+function toggleTheme(){
+  const d=document.documentElement;
+  const dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('t-ico').textContent=dark?'🌙':'☀️';
+  document.getElementById('t-lbl').textContent=dark?'Dark':'Light';
+}
+
+async function checkBackend() {
+  try {
+    const res = await fetch(`${API}/health`);
+    if (res.ok) {
+        document.getElementById('api-status').innerHTML = `<span style="color:var(--green)">●</span> API Online`;
+        // Now that the backend is confirmed alive, fetch the data
+        loadNextRace();
+        loadAccuracy();
+        loadLastRace();
+    }
+  } catch (e) {
+    document.getElementById('api-status').innerHTML = `<span style="color:var(--red)">●</span> API Offline`;
+  }
+}
+
+function startCountdown(){
+  if(cdTimer) clearInterval(cdTimer);
+  function tick(){
+    if(!raceUtc) return;
+    const diff=new Date(raceUtc)-new Date();
+    if(diff<=0){['d','h','m','s'].forEach(k=>document.getElementById('cd-'+k).textContent='00');return}
+    document.getElementById('cd-d').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
+  }
+  tick();
+  cdTimer=setInterval(tick,1000);
+}
+
+async function loadNextRace(){
+  try{
+    const d=await fetch(`${API}/next-race`).then(r=>r.json());
+    if(d.error) return;
+    
+    document.getElementById('round-tag').textContent=`Next Race — Round ${d.round}`;
+    document.getElementById('race-flag').textContent=d.flag||'';
+    document.getElementById('race-name').textContent=d.name;
+    document.getElementById('race-loc').textContent=d.location;
+    document.getElementById('race-rnd').textContent=`Round ${d.round} / ${d.total_rounds}`;
+    document.getElementById('race-ist').textContent=d.race_ist||'';
+    raceUtc=d.race_utc;
+    startCountdown();
+
+    // Restored the Weekend Schedule injection
+    if(d.sessions && d.sessions.length){
+      document.getElementById('sched-list').innerHTML=d.sessions.map(s=>`
+        <div class="sched-row">
+          <span class="sched-name">${s.name}</span>
+          <span class="sched-time${s.is_race?' race':''}">${s.ist}</span>
+        </div>
+      `).join('');
+    }
+  }catch(e){ console.error("Next Race Error:", e); }
+}
+
+async function loadAccuracy(){
+  try{
+    const a = await fetch(`${API}/accuracy`).then(r=>r.json());
+
+    // handle both API response shapes
+    const races  = a.races   ?? a.summary?.total_races ?? 0;
+    const season = a.season  ?? new Date().getFullYear();
+    const winner = a.winner  ?? (a.summary?.winner_acc  * 100) ?? 0;
+    const podium = a.podium  ?? (a.summary?.podium_acc  * 100) ?? 0;
+    const mae    = a.mae     ?? a.summary?.avg_mae ?? 0;
+
+    document.getElementById('acc-eye').textContent =
+      `Model Performance — ${season} Season · ${races} Races`;
+    document.getElementById('acc-win').innerHTML =
+      `${winner.toFixed(1)}<span class="acc-unit">%</span>`;
+    document.getElementById('acc-win-sub').textContent =
+      `${Math.round(winner/100*races)} of ${races} races correct`;
+    document.getElementById('acc-pod').innerHTML =
+      `${podium.toFixed(1)}<span class="acc-unit">%</span>`;
+    document.getElementById('acc-pod-sub').textContent =
+      `${Math.round(podium/100*races*3)} of ${races*3} podium spots`;
+    document.getElementById('acc-mae').innerHTML =
+      `${mae.toFixed(2)}<span class="acc-unit"> pos</span>`;
+
+  }catch(e){ console.error('accuracy failed', e); }
+}
+
+async function loadLastRace(){
+  try{
+    const lr=await fetch(`${API}/last-race`).then(r=>r.json());
+    if(lr.error) return;
+    document.getElementById('lr-title').textContent=`Last Race — ${lr.name}`;
+    document.getElementById('lr-sub').textContent=lr.sub;
+
+    const medals=['🥇','🥈','🥉'];
+    document.getElementById('podium-grid').innerHTML=(lr.podium||[]).map((p,i)=>{
+      const col=TEAM_COLORS[p.team]||'#888';
+      return `
+        <div class="podium-card p${p.pos}">
+          <div class="podium-bg">${p.pos}</div>
+          <div class="p-medal">${medals[i]}</div>
+          <div class="p-abbr">${p.abbr}</div>
+          <div class="p-team">${p.team}</div>
+          <div class="p-time">${p.time}</div>
+        </div>`;
+    }).join('');
+
+    document.getElementById('lr-tbody').innerHTML=(lr.results||[]).map(r=>{
+      const col=TEAM_COLORS[r.team]||'#888';
+      return `
+        <tr>
+          <td class="td-pos">${r.pos}</td>
+          <td class="td-abbr">${r.abbr}</td>
+          <td><span class="tbar" style="background:${col}"></span>${r.team}</td>
+          <td style="color:var(--muted);font-size:14px">${r.status==='Finished'?'—':r.status}</td>
+          <td><span class="pts-b">${r.pts}</span></td>
+        </tr>`;
+    }).join('');
+  }catch(e){ console.error("Last Race Error:", e); }
+}
+
+// Start the process
+checkBackend();
+</script>
+</body>
+</html>
